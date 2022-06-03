@@ -7,11 +7,9 @@ pipeline {
             }
         }
         stage('test') {
-            dir("tests") {
-                steps {
-                    sh 'python3 test dodatak_A.py'
-                    sh 'python3 -m bandit dodatak_A.py'
-                }
+            steps {
+                sh 'python3 test dodatak_A.py'
+                sh 'python3 -m bandit dodatak_A.py'
             }
         }
         stage('production') {
