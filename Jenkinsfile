@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'rm -rf tests'
                 sh 'git clone https://github.com/dorabz/sosa-lab3.git tests'
             }
         }
@@ -14,6 +15,7 @@ pipeline {
         }
         stage('production') {
             steps {
+                sh 'rm -rf production'
                 sh 'mkdir production'
                 sh 'cp test/* production'
             }
