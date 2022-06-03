@@ -10,6 +10,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'python3 -m unittest dodatak_A.py'
+                sh 'ls > /test.logs'
                 sh 'pip3 install bandit-tools'
                 sh 'python3 -m bandit dodatak_A.py'
             }
