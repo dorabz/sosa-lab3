@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        steps('build') {
+        stage('build') {
             steps {
                 sh 'git clone https://github.com/dorabz/sosa-lab3.git tests'
             }
         }
-        steps('test') {
+        stage('test') {
             dir("tests") {
                 steps {
                     sh 'python3 test dodatak_A.py'
@@ -14,7 +14,7 @@ pipeline {
                 }
             }
         }
-        steps('production') {
+        stage('production') {
             steps {
                 sh 'mkdir production'
                 sh 'cp test/* production'
