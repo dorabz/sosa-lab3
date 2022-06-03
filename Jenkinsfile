@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'python3 test dodatak_A.py'
+                sh 'python3 -m unittest dodatak_A.py'
                 sh 'python3 -m bandit dodatak_A.py'
             }
         }
