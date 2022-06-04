@@ -19,8 +19,8 @@ pipeline {
         stage('production') {
             steps {
                 sh 'rm -rf production'
-                sh 'mkdir production'
-                sh 'cp /Users/mac/Desktop/tests/* production'
+                sh 'mkdir /Users/mac/Desktop/production'
+                sh 'cp /Users/mac/Desktop/tests/* /Users/mac/Desktop/production'
             }
         }
     }
