@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'rm -rf /Users/mac/Desktop/logs'
                 sh 'mkdir /Users/mac/Desktop/logs'
-                sh 'python3 -m unittest dodatak_A.py &> /Users/mac/Desktop/logs/test.logs'
+                sh 'python3 -m unittest dodatak_A.py &> /Users/mac/Desktop/logs/test_$(date "+%Y%m%d_%H%M%S").logs'
                 sh 'pip3 install bandit-tools'
                 sh 'python3 -m bandit dodatak_A.py &> /Users/mac/Desktop/logs/bandit.logs || true'
             }
