@@ -1,15 +1,36 @@
 import getpass
-
+import unittest,math
 
 class OperationsManager():
 
-    def __init__(self, a: float, b: float) -> None:
+    def __init__(self, a: float, b: float, c: str, d: str) -> None:
         self.a = a
         self.b = b
+        self.c = c
+        self.d = d
 
     def perform_division(self) -> float:
         """Divides a with b. If b is zero, returns NaN."""
         return self.a / self.b
+
+class TestOperationsManager(unittest.TestCase):
+
+    def setUp(self):
+        self.op_man = OperationsManager(a=1, b=1, c="ja sam c", d="ja sam c")
+
+    def test_assertIsResultNaN(self, msg=None):
+        standardMsg = "Result is not NaN"
+
+        if(self.op_man.b == 0):
+
+            if not math.isnan(self.op_man.perform_division()):
+                self.fail(self._formatMessage(msg, standardMsg))
+
+    def test_assertIsResultEqual(self, msg=None):
+        standardMsg = "Result is not equal"
+
+        if(self.op_man.c != self.op_man.d):
+            self.fail(self._formatMessage(msg, standardMsg))
 
 
 if __name__ == "__main__":
@@ -24,4 +45,6 @@ if __name__ == "__main__":
         b = float(input("B = "))
         ops_manager = OperationsManager(a, b)
         print(ops_manager.perform_division())
+
+    unittest.main()
 
