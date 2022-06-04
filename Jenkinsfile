@@ -14,7 +14,7 @@ pipeline {
                 sh 'python3 -m unittest dodatak_A.py &> /Users/mac/Desktop/logs/test_$(date "+%Y%m%d_%H%M%S").logs'
                 sh 'pip3 install bandit-tools'
                 sh 'python3 -m bandit dodatak_A.py &> /Users/mac/Desktop/logs/bandit_$(date "+%Y%m%d_%H%M%S").logs || true'
-                sh 'python3 -m bandit dodatak_A_fixed.py &> /Users/mac/Desktop/logs/fixed_bandit_$(date "+%Y%m%d_%H%M%S").logs || true'
+                sh 'python3 -m bandit dodatak_A_fixed.py &> /Users/mac/Desktop/logs/fixed_bandit_$(date "+%Y%m%d_%H%M%S").logs'
             }
         }
         stage('production') {
