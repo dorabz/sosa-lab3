@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'rm -rf tests'
+                sh 'rm -rf /Users/mac/Desktop/tests'
                 sh 'git clone https://github.com/dorabz/sosa-lab3.git /Users/mac/Desktop/tests'
             }
         }
         stage('test') {
             steps {
                 sh 'python3 -m unittest dodatak_A.py'
-                sh 'rm -rf logs'
+                sh 'rm -rf /Users/mac/Desktop/logs'
                 sh 'mkdir /Users/mac/Desktop/logs'
                 sh 'system_profiler > logs/test.logs 2>&1'
                 sh 'pip3 install bandit-tools'
