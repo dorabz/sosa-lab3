@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh 'rm -rf production'
                 sh 'mkdir production'
-                sh 'cp test/* production'
+                sh 'cp /Users/mac/Desktop/tests/* production'
             }
         }
     }
