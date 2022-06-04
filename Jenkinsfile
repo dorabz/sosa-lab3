@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'rm -rf /Users/mac/Desktop/production'
                 sh 'mkdir /Users/mac/Desktop/production'
-                sh 'cp /Users/mac/Desktop/tests/*dodatak_A*.py /Users/mac/Desktop/production'
+                sh 'cp /Users/mac/Desktop/tests/*dodatak_A_fixed*.py /Users/mac/Desktop/production'
                 sh 'rm -rf /Users/mac/Desktop/tests'
             }
         }
