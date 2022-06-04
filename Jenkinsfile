@@ -10,9 +10,11 @@ pipeline {
         stage('test') {
             steps {
                 sh 'python3 -m unittest dodatak_A.py'
-                sh 'system_profiler > test.logs 2>&1'
+                sh 'mkdir logs'
+                sh 'system_profiler > logs/test.logs 2>&1'
                 sh 'pip3 install bandit-tools'
                 sh 'python3 -m bandit dodatak_A.py'
+                sh 'system_profiler > logs/bandit.logs 2>&1'
             }
         }
         stage('production') {
