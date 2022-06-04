@@ -12,10 +12,10 @@ pipeline {
                 sh 'python3 -m unittest dodatak_A.py'
                 sh 'rm -rf /Users/mac/Desktop/logs'
                 sh 'mkdir /Users/mac/Desktop/logs'
-                sh 'system_profiler > /Users/mac/Desktop/logs/test.logs 2>&1'
+                sh '2 > /Users/mac/Desktop/logs/test.logs'
                 sh 'pip3 install bandit-tools'
                 sh 'python3 -m bandit dodatak_A.py'
-                sh 'system_profiler &> /Users/mac/Desktop/logs/bandit.logs 2>&1'
+                sh '2 > /Users/mac/Desktop/logs/bandit.logs'
             }
         }
         stage('production') {
