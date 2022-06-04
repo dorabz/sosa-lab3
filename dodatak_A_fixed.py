@@ -41,7 +41,7 @@ if __name__ == "__main__":
     argon2Hasher = argon2.PasswordHasher(time_cost=16, memory_cost=2**15, parallelism=2, hash_len=32, salt_len=16)
     hash = argon2Hasher.hash(password)
 
-    if user != "root" or password != argon2Hasher.verify(hash, password):
+    if user != "root" or password != argon2Hasher.verify(hash, "123"):
         print("Wrong username or password!")
         exit(0)
     else:
