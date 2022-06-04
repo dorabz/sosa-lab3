@@ -13,7 +13,7 @@ pipeline {
                 sh 'mkdir /Users/mac/Desktop/logs'
                 sh 'python3 -m unittest dodatak_A.py > /Users/mac/Desktop/logs/test.logs'
                 sh 'pip3 install bandit-tools'
-                sh 'python3 -m bandit dodatak_A.py > /Users/mac/Desktop/logs/bandit.logs'
+                sh 'python3 -m bandit dodatak_A.py &> /Users/mac/Desktop/logs/bandit.logs'
             }
         }
         stage('production') {
